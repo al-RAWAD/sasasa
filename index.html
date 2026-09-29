@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VOLT Store | متجر الألعاب</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#080a12;
+    color:#fff;
+}
+
+:root{
+    --purple:#7c3cff;
+    --blue:#00a8ff;
+    --pink:#ff2d75;
+    --dark:#080a12;
+    --card:#111522;
+    --border:#242a3a;
+    --gray:#9ba3b7;
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:linear-gradient(90deg,#5117d9,#007bd1);
+    padding:9px 7%;
+    text-align:center;
+    font-size:13px;
+    font-weight:bold;
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:#080a12ee;
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--border);
+
+    padding:15px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--blue)
+    );
+
+    font-size:22px;
+    font-weight:bold;
+
+    box-shadow:0 8px 25px #7c3cff55;
+}
+
+.logo h1{
+    font-size:22px;
+}
+
+.logo span{
+    color:#9b6cff;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#dce1ee;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#9b6cff;
+}
+
+.header-btn{
+    text-decoration:none;
+    background:var(--purple);
+    color:#fff;
+
+    padding:11px 18px;
+    border-radius:10px;
+
+    font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+    min-height:570px;
+
+    display:flex;
+    align-items:center;
+
+    padding:70px 7%;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at 80% 30%,
+        #7c3cff55,
+        transparent 35%
+    ),
+    radial-gradient(
+        circle at 20% 70%,
+        #00a8ff33,
+        transparent 35%
+    ),
+    #080a12;
+}
+
+.hero-content{
+    max-width:720px;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:8px 14px;
+
+    background:#ffffff0c;
+
+    border:1px solid #ffffff1a;
+
+    border-radius:30px;
+
+    color:#bda8ff;
+
+    margin-bottom:20px;
+}
+
+.hero h2{
+    font-size:60px;
+    line-height:1.1;
+
+    margin-bottom:20px;
+}
+
+.hero h2 span{
+    background:linear-gradient(
+        90deg,
+        #9c63ff,
+        #00bfff,
+        #ff3c86
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    color:#aeb6ca;
+    font-size:18px;
+    line-height:1.9;
+
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:14px 24px;
+
+    border-radius:11px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.primary{
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        #4d1cc7
+    );
+
+    color:white;
+
+    box-shadow:0 10px 30px #7c3cff35;
+}
+
+.primary:hover{
+    transform:translateY(-4px);
+}
+
+.secondary{
+    border:1px solid #ffffff20;
+    color:white;
+    background:#ffffff08;
+}
+
+.secondary:hover{
+    background:#ffffff12;
+}
+
+/* STATS */
+
+.stats{
+    margin:-45px 7% 0;
+
+    position:relative;
+    z-index:5;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    background:#111522;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+}
+
+.stat{
+    text-align:center;
+    padding:25px;
+
+    border-left:1px solid var(--border);
+}
+
+.stat:last-child{
+    border-left:none;
+}
+
+.stat strong{
+    display:block;
+
+    font-size:27px;
+
+    color:#a978ff;
+
+    margin-bottom:5px;
+}
+
+.stat span{
+    color:var(--gray);
+}
+
+/* SECTION */
+
+.section{
+    padding:90px 7%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title small{
+    color:#9b6cff;
+    font-weight:bold;
+}
+
+.title h2{
+    font-size:38px;
+    margin:10px 0;
+}
+
+.title p{
+    color:var(--gray);
+}
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.product{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.4s;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+
+    border-color:#7040d6;
+
+    box-shadow:0 20px 45px #0008;
+}
+
+.product-image{
+    height:230px;
+    position:relative;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.product:hover img{
+    transform:scale(1.08);
+}
+
+.sale{
+    position:absolute;
+
+    top:15px;
+    right:15px;
+
+    background:var(--pink);
+
+    padding:7px 11px;
+
+    border-radius:20px;
+
+    font-size:12px;
+    font-weight:bold;
+}
+
+.product-content{
+    padding:20px;
+}
+
+.product-content h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.product-content p{
+    color:var(--gray);
+    line-height:1.7;
+    font-size:14px;
+
+    min-height:48px;
+}
+
+.price{
+    margin:18px 0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.price strong{
+    color:#fff;
+    font-size:23px;
+}
+
+.price span{
+    color:#727b91;
+    text-decoration:line-through;
+}
+
+.buy{
+    display:block;
+
+    text-align:center;
+
+    background:linear-gradient(
+        90deg,
+        var(--purple),
+        #4b8cff
+    );
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.buy:hover{
+    filter:brightness(1.15);
+}
+
+/* WHY */
+
+.why{
+    background:
+    linear-gradient(
+        135deg,
+        #0e1220,
+        #10172b
+    );
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.feature{
+    background:#ffffff06;
+
+    border:1px solid var(--border);
+
+    padding:30px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-5px);
+    border-color:#7040d6;
+}
+
+.icon{
+    width:65px;
+    height:65px;
+
+    margin:0 auto 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:17px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--blue)
+    );
+
+    font-size:28px;
+}
+
+.feature h3{
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:var(--gray);
+    line-height:1.8;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.about-image{
+    height:380px;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+}
+
+.about-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.about-text small{
+    color:#9b6cff;
+    font-weight:bold;
+}
+
+.about-text h2{
+    font-size:40px;
+    margin:12px 0 20px;
+}
+
+.about-text p{
+    color:var(--gray);
+    line-height:2;
+    margin-bottom:25px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#0d111d;
+}
+
+.contact-box{
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:45px;
+
+    background:
+    radial-gradient(
+        circle at top,
+        #7c3cff22,
+        transparent 55%
+    ),
+    #111522;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+}
+
+.contact-box h2{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.contact-box p{
+    color:var(--gray);
+    margin-bottom:25px;
+}
+
+.whatsapp{
+    display:inline-block;
+
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 28px;
+
+    border-radius:11px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px #25d36644;
+}
+
+/* FOOTER */
+
+footer{
+    background:#05070d;
+
+    padding:35px 7%;
+
+    text-align:center;
+
+    color:#778096;
+}
+
+.footer-logo{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.footer-logo span{
+    color:#9b6cff;
+}
+
+.line{
+    height:1px;
+    background:#ffffff12;
+    margin:20px 0;
+}
+
+/* FLOAT WHATSAPP */
+
+.float{
+    position:fixed;
+
+    left:22px;
+    bottom:22px;
+
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#25D366;
+
+    color:white;
+
+    border-radius:50%;
+
+    text-decoration:none;
+
+    font-size:27px;
+
+    z-index:1000;
+
+    box-shadow:0 8px 25px #25d36655;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    header{
+        padding:13px 5%;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .header-btn{
+        font-size:12px;
+        padding:9px 12px;
+    }
+
+    .hero{
+        min-height:550px;
+        padding:55px 5%;
+        text-align:center;
+    }
+
+    .hero h2{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .stats{
+        margin:-30px 5% 0;
+        grid-template-columns:1fr;
+    }
+
+    .stat{
+        border-left:none;
+        border-bottom:1px solid var(--border);
+    }
+
+    .stat:last-child{
+        border-bottom:none;
+    }
+
+    .section{
+        padding:65px 5%;
+    }
+
+    .title h2{
+        font-size:30px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .about-image{
+        height:280px;
+    }
+
+    .about-text h2{
+        font-size:32px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- TOP -->
+
+<div class="topbar">
+    🎮 متجر ألعاب رقمي — عروض مميزة وأسعار منافسة
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            V
+        </div>
+
+        <h1>
+            VOLT <span>STORE</span>
+        </h1>
+
+    </div>
+
+
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#products">المنتجات</a>
+        <a href="#why">مميزاتنا</a>
+        <a href="#contact">تواصل</a>
+    </nav>
+
+
+    <a
+        class="header-btn"
+        href="#products">
+
+        🛒 المتجر
+
+    </a>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ⚡ متجر الألعاب الرقمي
+        </div>
+
+        <h2>
+            كل ما تحتاجه<br>
+            <span>في مكان واحد</span>
+        </h2>
+
+        <p>
+            اكتشف منتجات الألعاب الرقمية والعروض
+            المميزة، واختر المنتج المناسب لك
+            وتواصل معنا لإتمام الطلب.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#products"
+                class="btn primary">
+
+                🛒 تصفح المنتجات
+
+            </a>
+
+
+            <a
+                href="#contact"
+                class="btn secondary">
+
+                💬 تواصل معنا
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+    <div class="stat">
+        <strong>24/7</strong>
+        <span>استقبال الطلبات</span>
+    </div>
+
+    <div class="stat">
+        <strong>⚡ سريع</strong>
+        <span>معالجة الطلبات</span>
+    </div>
+
+    <div class="stat">
+        <strong>💬</strong>
+        <span>دعم عبر واتساب</span>
+    </div>
+
+</div>
+
+
+<!-- PRODUCTS -->
+
+<section class="section" id="products">
+
+    <div class="title">
+
+        <small>
+            المنتجات
+        </small>
+
+        <h2>
+            أحدث المنتجات
+        </h2>
+
+        <p>
+            اختر المنتج المناسب وتواصل معنا للطلب
+        </p>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=90"
+                alt="منتج ألعاب">
+
+                <div class="sale">
+                    جديد
+                </div>
+
+            </div>
+
+
+            <div class="product-content">
+
+                <h3>
+                    بطاقة ألعاب رقمية
+                </h3>
+
+                <p>
+                    بطاقة رقمية للألعاب حسب الفئة
+                    والقيمة التي تختارها.
+                </p>
+
+                <div class="price">
+                    <strong>5 ر.ع</strong>
+                    <span>7 ر.ع</span>
+                </div>
+
+                <a
+                    class="buy"
+                    href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بطلب%20بطاقة%20ألعاب%20رقمية"
+                    target="_blank">
+
+                    💬 اطلب الآن
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1000&q=90"
+                alt="إكسسوارات ألعاب">
+
+                <div class="sale">
+                    عرض
+                </div>
+
+            </div>
+
+
+            <div class="product-content">
+
+                <h3>
+                    حزمة ألعاب رقمية
+                </h3>
+
+                <p>
+                    مجموعة من المنتجات الرقمية
+                    للألعاب ضمن عرض واحد.
+                </p>
+
+                <div class="price">
+                    <strong>10 ر.ع</strong>
+                    <span>15 ر.ع</span>
+                </div>
+
+                <a
+                    class="buy"
+                    href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بطلب%20حزمة%20الألعاب%20الرقمية"
+                    target="_blank">
+
+                    💬 اطلب الآن
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=90"
+                alt="منتج ألعاب">
+
+                <div class="sale">
+                    خصم
+                </div>
+
+            </div>
+
+
+            <div class="product-content">
+
+                <h3>
+                    منتج ألعاب مميز
+                </h3>
+
+                <p>
+                    منتج رقمي للألعاب مع تفاصيل
+                    الطلب والتسليم عبر التواصل.
+                </p>
+
+                <div class="price">
+                    <strong>8 ر.ع</strong>
+                    <span>12 ر.ع</span>
+                </div>
+
+                <a
+                    class="buy"
+                    href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بطلب%20المنتج%20المميز"
+                    target="_blank">
+
+                    💬 اطلب الآن
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- WHY -->
+
+<section class="section why" id="why">
+
+    <div class="title">
+
+        <small>
+            لماذا متجرنا؟
+        </small>
+
+        <h2>
+            تجربة شراء سهلة
+        </h2>
+
+        <p>
+            كل شيء واضح وبسيط
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+
+        <div class="feature">
+
+            <div class="icon">
+                ⚡
+            </div>
+
+            <h3>
+                سرعة
+            </h3>
+
+            <p>
+                نسعى لمعالجة الطلبات
+                والتواصل مع العملاء بسرعة.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="icon">
+                🔒
+            </div>
+
+            <h3>
+                وضوح
+            </h3>
+
+            <p>
+                معلومات المنتج والسعر
+                ظاهرة قبل التواصل والطلب.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="icon">
+                💬
+            </div>
+
+            <h3>
+                دعم مباشر
+            </h3>
+
+            <p>
+                تواصل معنا مباشرة عبر
+                واتساب للاستفسارات والطلبات.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section about">
+
+    <div class="about-image">
+
+        <img
+        src="https://images.unsplash.com/photo-1603481546238-487240415921?auto=format&fit=crop&w=1200&q=90"
+        alt="متجر ألعاب">
+
+    </div>
+
+
+    <div class="about-text">
+
+        <small>
+            من نحن
+        </small>
+
+        <h2>
+            VOLT STORE
+        </h2>
+
+        <p>
+            متجر رقمي متخصص في منتجات الألعاب
+            والخدمات الرقمية. هدفنا تقديم تجربة
+            بسيطة وسريعة للعملاء مع إمكانية
+            التواصل المباشر للطلب والاستفسار.
+        </p>
+
+        <a
+            href="#products"
+            class="btn primary">
+
+            مشاهدة المنتجات
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section contact" id="contact">
+
+    <div class="contact-box">
+
+        <h2>
+            تحتاج مساعدة؟
+        </h2>
+
+        <p>
+            تواصل معنا عبر واتساب للاستفسار
+            عن المنتجات والطلبات.
+        </p>
+
+        <a
+            class="whatsapp"
+            href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20المنتجات"
+            target="_blank">
+
+            💬 تواصل عبر واتساب
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        VOLT <span>STORE</span>
+    </div>
+
+    <p>
+        متجر ألعاب ومنتجات رقمية
+    </p>
+
+    <div class="line"></div>
+
+    <small>
+        © 2026 VOLT STORE — جميع الحقوق محفوظة
+    </small>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+    class="float"
+    href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20المتجر"
+    target="_blank">
+
+    💬
+
+</a>
+
+
+</body>
+</html>
